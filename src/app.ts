@@ -5,6 +5,8 @@ import hello from "./models/hello";
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   hello();
   res.send("hello");
