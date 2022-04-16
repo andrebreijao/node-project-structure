@@ -1,12 +1,10 @@
-import express from "express";
+import http from "http";
+import app from "./app";
 
-const app = express();
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 5001;
 
-app.get("/", (req, res) => {
-  res.send("<h1>hello</h1>");
-});
+const server = http.createServer(app);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port http://localhost:${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server listening on http://localhost:${PORT}...`);
 });
